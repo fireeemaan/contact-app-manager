@@ -1274,6 +1274,10 @@ video {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+.text-black\/50 {
+  color: rgb(0 0 0 / 0.5);
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1536,6 +1540,11 @@ video {
 .hover\:text-purple-600:hover {
   --tw-text-opacity: 1;
   color: rgb(147 51 234 / var(--tw-text-opacity));
+}
+
+.hover\:text-purple-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(126 34 206 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-lg:hover {
