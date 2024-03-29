@@ -6,10 +6,86 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="bg-[url('../assets/img/wavy-lines.svg')] bg-cover">
-
-    <div>
-
+<div class="flex flex-row items-center h-screen">
+    <div class="flex flex-col w-[13rem] h-[90vh] ml-3 items-center bg-purple-700 backdrop-blur-md bg-opacity-5 border border-black/2 shadow-lg rounded-lg">
+        <h1 class="text-3xl font-bold mt-5 text-pink-400 mb-10">Contacti<span class="text-purple-500">fy</span></h1>
+        <nav class="">
+            <div class="w-full my-3">
+                <label for="dashboard" class="has-[:checked]:shadow-lg relative w-[13rem] h-12 p-2 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center rounded-xl">
+                    <input type="radio" name="nav" id="dashboard" class="hidden peer/expand" checked>
+                    <p class="text-lg text-center font-bold hover:text-xl hover:text-purple-600 peer-checked/expand:text-xl peer-checked/expand:text-purple-600 peer ease-in-out duration-200">Dashboard</p>
+                </label>
+            </div>
+            <div class="w-full my-3">
+                <label for="profile" class="has-[:checked]:shadow-lg relative w-[13rem] h-12 p-2 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center rounded-xl">
+                    <input type="radio" name="nav" id="profile" class="hidden peer/expand">
+                    <p class="text-lg text-center font-bold hover:text-xl hover:text-purple-600 peer-checked/expand:text-xl peer-checked/expand:text-purple-600 peer ease-in-out duration-200">My Profile</p>
+                </label>
+            </div>
+            <div class="w-full my-3">
+                <label for="settings" class="has-[:checked]:shadow-lg relative w-[13rem] h-12 p-2 ease-in-out duration-300 border-solid border-black/10 has-[:checked]:border group flex flex-row gap-3 items-center justify-center rounded-xl">
+                    <input type="radio" name="nav" id="settings" class="hidden peer/expand">
+                    <p class="text-lg text-center font-bold hover:text-xl hover:text-purple-600 peer-checked/expand:text-xl peer-checked/expand:text-purple-600 peer ease-in-out duration-200">Settings</p>
+                </label>
+            </div>
+        </nav>
     </div>
 
+    <div>
+        <div class="">
+            <table class="w-[70vw] ml-10 rounded-lg">
+                <thead class="bg-purple-400 uppercase text-white">
+                <tr class="text-left">
+                    <th class="rounded-tl-xl">No. ID</th>
+                    <th class="">Phone Number</th>
+                    <th class="">Owner</th>
+                    <th class="rounded-tr-xl">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="bg-white text-left">
+                <tr class="border-y border-black/20">
+                    <td>1</td>
+                    <td>+627355387199</td>
+                    <td>Firman</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>+622732271241</td>
+                    <td>Must<br></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>+626340854936</td>
+                    <td>A Nice</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>+625199257699</td>
+                    <td>fireeemaan</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>+627705588138</td>
+                    <td>Nokktis</td>
+                    <td></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td class="rounded-tl-xl rounded-tr-xl">
+
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
 </body>
 </html>
