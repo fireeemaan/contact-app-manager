@@ -742,6 +742,14 @@ video {
   margin-top: 13rem;
 }
 
+.mr-\[20\%\] {
+  margin-right: 20%;
+}
+
+.ml-\[30\%\] {
+  margin-left: 30%;
+}
+
 .block {
   display: block;
 }
@@ -881,6 +889,10 @@ video {
 
 .gap-11 {
   gap: 2.75rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .text-wrap {
@@ -1076,6 +1088,14 @@ video {
 .py-28 {
   padding-top: 7rem;
   padding-bottom: 7rem;
+}
+
+.pb-28 {
+  padding-bottom: 7rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-left {

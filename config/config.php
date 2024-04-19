@@ -4,7 +4,7 @@ class DbConfig
 {
     private $host = 'localhost';
     private $username = 'root';
-    private $password = 'tahutahu1';
+    private $password = '';
     private $database = 'contact-app-manager';
     private $conn;
 
