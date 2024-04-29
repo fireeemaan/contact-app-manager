@@ -1,16 +1,14 @@
-<form>
-    <fieldset class="container">
+<fieldset class="container">
+    <!-- <a role="button" href="<?= urlpath('login'); ?>">Login</a> -->
+    <form action="<?= urlpath('login'); ?>" method="post">
         <label>
             Username
-            <input name="first_name" placeholder="Username" autocomplete="given-name" />
+            <input name="username" placeholder="Username" autocomplete="given-name" />
         </label>
         <label>
             Password
-            <input type="password" name="email" placeholder="Password" autocomplete="email" />
+            <input type="password" name="password" placeholder="Password" />
         </label>
-        <input type="submit" value="Submit" />
-    </fieldset>
-
-
-
-</form>
+        <button type="submit">Login</button>
+    </form>
+</fieldset>

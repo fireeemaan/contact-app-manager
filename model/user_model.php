@@ -6,10 +6,11 @@ class User
 {
     static function login($data = [])
     {
-        extract($data);
+        $username = $data['username'];
+        $password = $data['password'];
         global $conn;
 
-        $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
+        $result = $conn->query("SELECT * FROM user WHERE username = '$username'");
         if ($result = $result->fetch_assoc()) {
             $hashedPassword = $result['password'];
             $verify = password_verify($password, $hashedPassword);
@@ -25,17 +26,18 @@ class User
 
     static function register($data = [])
     {
-        extract($data);
+        $username = $data['username'];
+        $password = $data['password'];
         global $conn;
 
-        $inserted_at = date('Y-m-d H:i:s', strtotime('now'));
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO users SET name = ?, email = ?, password = ?, inserted_at = ?";
+        $sql = "INSERT INTO user SET username = ?, password = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('ssss', $name, $email, $hashedPassword, $inserted_at);
+        $stmt->bind_param('ss', $username, $hashedPassword);
         $stmt->execute();
 
         $result = $stmt->affected_rows > 0 ? true : false;
+        echo '<script>console.log("' . $result . '")</script>';
         return $result;
     }
 

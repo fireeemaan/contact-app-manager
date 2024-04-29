@@ -21,7 +21,7 @@ class AuthController
         $post = array_map('htmlspecialchars', $_POST);
 
         $user = User::login([
-            'email' => $post['email'],
+            'username' => $post['username'],
             'password' => $post['password']
         ]);
         if ($user) {
@@ -38,10 +38,10 @@ class AuthController
         $post = array_map('htmlspecialchars', $_POST);
 
         $user = User::register([
-            'name' => $post['name'],
-            'email' => $post['email'],
+            'username' => $post['username'],
             'password' => $post['password']
         ]);
+
 
         if ($user) {
             header('Location: ' . BASEURL . 'login');

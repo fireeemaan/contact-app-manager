@@ -5,7 +5,7 @@
     <article>
         <div role="group">
             <a role="button" href="<?= urlpath('login'); ?>">Login</a>
-            <a role="button">Register</a>
+            <a role="button" href="<?= urlpath('register'); ?>" )>Register</a>
         </div>
     </article>
 </main>

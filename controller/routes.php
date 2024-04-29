@@ -25,6 +25,7 @@ route('/', 'get', function () {
 
 route('login', 'get', 'AuthController::login');
 route('register', 'get', 'AuthController::register');
+route('dashboard', 'get', 'DashboardController::index');
 
 
 # POST
