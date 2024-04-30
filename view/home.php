@@ -1,14 +1,15 @@
 <?php $title = 'Home'; ?>
 
 <?php ob_start(); ?>
-<main class="container">
-    <article>
-        <div role="group">
-            <a role="button" href="<?= urlpath('login'); ?>">Login</a>
-            <a role="button" href="<?= urlpath('register'); ?>" )>Register</a>
+<div class="hero is-fullheight">
+    <div class="hero-body">
+        <div
+            class="container has-text-centered is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+            <a class="button mb-5" href="<?= urlpath('login'); ?>">Login</a>
+            <a class="button" href="<?= urlpath('register'); ?>">Register</a>
         </div>
-    </article>
-</main>
+    </div>
+</div>
 
 <?php $body = ob_get_clean(); ?>
 
