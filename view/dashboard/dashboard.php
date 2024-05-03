@@ -9,7 +9,7 @@
                     <a href="" class="close-btn m-1 size-7" onclick="hideElement('add-contact')"><img width="30"
                             height="30" src="https://img.icons8.com/ios/50/delete-sign--v1.png" /></a>
                     <p class="text-2xl font-bold text-center text-purple-500 my-3 ">Add Contact</p>
-                    <form action="../../controller/DashboardController.php?action=add" method="post"
+                    <form action="<?= urlpath('contacts/add') ?>" method="post"
                         class="flex flex-col justify-center items-center">
                         <input type="text" placeholder="Phone Number" name="phone" class="py-2 px-3 mt-3 rounded-lg"
                             required>
@@ -48,7 +48,7 @@
                 <div
                     class="fixed flex justify-between top-1/2 left-0 right-0 transform -translate-y-1/2 flex-col w-[13rem] items-center h-[90vh] ml-3 bg-purple-700 backdrop-blur-md bg-opacity-5 border border-black/2 shadow-lg rounded-lg">
                     <div class="sidebar-menu mb-[17rem]">
-                        <h1 class="text-3xl font-bold mt-5 text-pink-400 mb-10">
+                        <h1 class="text-3xl text-center font-bold mt-5 text-pink-400 mb-10">
                             Contacti<span class="text-purple-500">fy</span>
                         </h1>
                         <nav>
@@ -125,7 +125,7 @@
                                 foreach ($contacts as $contact) {
                                     if ($contact['deleted_at'] == NULL && $contact['user_id'] == $_SESSION['user']['id']) {
                                         ?>
-                                        <tr class="border-b border-black/10">
+                                        <tr class="border-b border-black/10" id="<?= $contact['id'] ?>">
                                             <td class="p-2"><?= $i ?></td>
                                             <td class="p-2"><?= $contact['phone'] ?></td>
                                             <td class="p-2"><?= $contact['name'] ?></td>
@@ -152,7 +152,7 @@
             </div>
         </div>
 
-        <script src="public/js/TableModifier.js"></script>
-        <script src="public/js/dashboard.js"></script>
+        <script src="public/js/tableModifier.js"></script>
+        <script src="public/js/dash.js"></script>
 
 </body>
