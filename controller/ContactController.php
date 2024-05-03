@@ -24,6 +24,28 @@ class ContactController
             }
         }
     }
+
+    static function saveEdit()
+    {
+        if (!isset($_SESSION['user'])) {
+            header('Location: ' . BASEURL . 'login?auth=false');
+            exit;
+        } else {
+            $post = array_map('htmlspecialchars', $_POST);
+            $contact = Contact::update([
+                'id' => $post['id'],
+                'phone' => $post['phone'],
+                'name' => $post['name']
+            ]);
+
+            if ($contact) {
+                header('Location: ' . BASEURL . 'dashboard');
+            } else {
+                header('Location: ' . BASEURL . 'contacts/edit?editFailed=true');
+            }
+        }
+    }
+
     // static function edit()
     // {
     //     if (!isset($_SESSION['user'])) {

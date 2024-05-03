@@ -37,5 +37,6 @@ Router::url('login', 'post', 'AuthController::saveLogin');
 Router::url('register', 'post', 'AuthController::saveRegister');
 
 Router::url('contacts/add', 'post', 'ContactController::saveAdd');
+Router::url('contacts/edit', 'post', 'ContactController::saveEdit');
 
 new Router();

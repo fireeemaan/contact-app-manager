@@ -25,21 +25,32 @@ function showElement(elementId) {
 const editBtn = document.querySelectorAll(".edit-btn");
 editBtn.forEach((button) => {
   button.addEventListener("click", (event) => {
-    showElement("edit-contact");
-
     const trParent = event.target.closest("tr");
     const trId = trParent.id;
 
-    const url = "api/contact_api.php?id=" + trId;
-    console.log(url);
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        document.getElementById("id-field").value = data.id;
-        document.getElementById("name-field").value = data.name;
-        document.getElementById("phone-field").value = data.phone;
-      })
-      .catch((error) => console.error("Error:", error));
+    showElement("edit-contact-" + trId);
   });
 });
+
+// const editBtn = document.querySelectorAll(".edit-btn");
+// editBtn.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     showElement("edit-contact");
+
+//     const trParent = event.target.closest("tr");
+//     const trId = trParent.id;
+
+//     const url = "model/contact_api.php?id=" + trId;
+
+//     fetch(url, {
+//       method: "GET",
+//     })
+//       .then((response) => console.log(response.text()))
+//       // .then((data) => {
+//       //   document.getElementById("id-field").value = data.id;
+//       //   document.getElementById("name-field").value = data.name;
+//       //   document.getElementById("phone-field").value = data.phone;
+//       // })
+//       .catch((error) => console.error("Error:", error));
+//   });
+// });

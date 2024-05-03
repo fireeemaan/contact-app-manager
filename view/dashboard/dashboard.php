@@ -4,10 +4,10 @@
         <!-- Add Contact Modal -->
         <div class="fixed hidden w-full h-auto top-0 bottom-0 bg-black/30 z-20" id="add-contact">
             <div
-                class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-72 bg-purple-200 rounded-lg shadow-lg">
+                class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-72 bg-purple-200 rounded-2xl shadow-lg">
+                <a href="" class="close-btn fixed m-2 size-7 right-0" onclick="hideElement('add-contact')"><img width="30"
+                        height="30" src="https://img.icons8.com/ios/50/delete-sign--v1.png" /></a>
                 <div class="flex flex-col">
-                    <a href="" class="close-btn m-1 size-7" onclick="hideElement('add-contact')"><img width="30"
-                            height="30" src="https://img.icons8.com/ios/50/delete-sign--v1.png" /></a>
                     <p class="text-2xl font-bold text-center text-purple-500 my-3 ">Add Contact</p>
                     <form action="<?= urlpath('contacts/add') ?>" method="post"
                         class="flex flex-col justify-center items-center">
@@ -24,11 +24,12 @@
         <div class="flex flex-row items-center h-screen">
             <div class="fixed hidden w-full h-auto top-0 bottom-0 bg-black/30 z-20" id="edit-contact">
                 <div
-                    class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-72 bg-purple-200 rounded-lg shadow-lg">
-                    <div class="flex flex-col">
-                        <a href="" class="close-btn m-1 size-7" onclick="hideElement('add-contact')"><img width="30"
+                    class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-72 bg-purple-200 rounded-2xl shadow-lg">
+                    <a href="" class="close-btn m-1 size-7" onclick="hideElement('add-contact')"><img width="30"
                                 height="30" src="https://img.icons8.com/ios/50/delete-sign--v1.png" /></a>
                         <p class="text-2xl font-bold text-center text-purple-500 my-3 ">Edit Contact</p>
+                    <div class="flex flex-col">
+                        
                         <form action="../../controller/DashboardController.php?action=update" method="post"
                             class="flex flex-col justify-center items-center">
                             <input id="id-field" type="hidden" name="id" class="py-2 px-3 mt-3 rounded-lg" required>
@@ -138,6 +139,31 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        <div class="flex flex-row items-center h-screen absolute left-0">
+                                            <div class="fixed hidden w-full h-auto top-0 bottom-0 bg-black/30 z-20" id="edit-contact-<?= $contact['id'] ?>">
+                                                <div
+                                                class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-72 bg-purple-200 rounded-2xl shadow-lg">
+                                                <a href="" class="close-btn fixed m-2 size-7 right-0"
+                                                            onclick="hideElement('add-contact')"><img width="30" height="30"
+                                                            src="https://img.icons8.com/ios/50/delete-sign--v1.png" /></a>
+                                                    <div class="flex flex-col m-10">
+                                                        
+                                                        <p class="text-2xl font-bold text-center text-purple-500 my-3 ">Edit Contact</p>
+                                                        <form action="contacts/edit"
+                                                            method="post" class="flex flex-col justify-center items-center">
+                                                            <input id="id-field" type="hidden" name="id" value="<?= $contact['id'] ?>"
+                                                                class="py-2 px-3 mt-3 rounded-lg" required>
+                                                            <input id="name-field" type="text" placeholder="Phone Number" name="phone" value="<?= $contact['phone'] ?>"
+                                                                class="py-2 px-3 mt-3 rounded-lg" required>
+                                                            <input id="phone-field" type="text" placeholder="Name" name="name" value="<?= $contact['name'] ?>"
+                                                                class="py-2 px-3 my-3 rounded-lg" required>
+                                                            <button type="submit"
+                                                                class="py-1 px-20 my-3 rounded-lg bg-purple-500 hover:bg-purple-600 text-white font-bold">Save
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <?php
                                         $i++;
                                     }
@@ -151,6 +177,7 @@
                 </div>
             </div>
         </div>
+
 
         <script src="public/js/tableModifier.js"></script>
         <script src="public/js/dash.js"></script>

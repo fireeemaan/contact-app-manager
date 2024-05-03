@@ -24,24 +24,21 @@ class Contact
         return $rows;
     }
 
-    static function selectEdit($id = '')
-    {
-        global $conn;
-        $sql = "SELECT * FROM contacts";
-        if ($id) {
-            $sql = "SELECT * FROM contacts WHERE id = ?";
-        }
-        $result = $conn->query($sql);
-        $rows = [];
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $rows[] = $row;
-            }
-        }
-        $result->free();
-        $conn->close();
-        return $rows;
+    static function update($data = [])
+    {
+        $id = $data['id'];
+        $phone = $data['phone'];
+        $name = $data['name'];
+
+        global $conn;
+        $sql = "UPDATE contacts SET phone = ?, name = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('ssi', $phone, $name, $id);
+        $stmt->execute();
+
+        $result = $stmt->affected_rows > 0 ? true : false;
+        return $result;
     }
 
     static function insert($data = [])
