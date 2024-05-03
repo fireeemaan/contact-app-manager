@@ -8,11 +8,11 @@
     <style>
         <?= $style ?? '' ?>
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <?= $body ?? '' ?>
-</body>
+<!-- </body><body> -->
+
+<?= $body ?? '' ?>
 
 </html>

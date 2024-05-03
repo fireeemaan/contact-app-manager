@@ -1,6 +1,6 @@
 <?php
 
-include_once 'model/user_model.php';
+include_once 'model/UserModel.php';
 
 
 class AuthController
@@ -24,9 +24,15 @@ class AuthController
             'username' => $post['username'],
             'password' => $post['password']
         ]);
+
+        // echo '<script>console.log(' . json_encode($user) . ')</script>';
+
         if ($user) {
             unset($user['password']);
             $_SESSION['user'] = $user;
+
+            // echo '<script>console.log(' . json_encode($_SESSION['user']) . ')</script>';
+
             header('Location: ' . BASEURL . 'dashboard');
         } else {
             header('Location: ' . BASEURL . 'login?failed=true');
@@ -37,7 +43,13 @@ class AuthController
     {
         $post = array_map('htmlspecialchars', $_POST);
 
+        if ($post['password'] !== $post['confirm_password']) {
+            header('Location: ' . BASEURL . 'register?failed=true');
+            exit;
+        }
+
         $user = User::register([
+            'name' => $post['name'],
             'username' => $post['username'],
             'password' => $post['password']
         ]);

@@ -1,6 +1,6 @@
 RewriteEngine On
-    RewriteBase /pweb-uas/
+    RewriteBase /contactapp/
     RewriteRule ^index\\.php$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /pweb-uas/index.php [L]
+    RewriteRule . /contactapp/index.php [L]

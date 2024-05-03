@@ -19,23 +19,17 @@ $url = implode(
 );
 
 # GET
-route('/', 'get', function () {
-    return view('home');
+Router::url('/', 'get', function () {
+    return view('auth_page/layout', ['url' => 'login']);
 });
 
-route('login', 'get', 'AuthController::login');
-route('register', 'get', 'AuthController::register');
-route('dashboard', 'get', 'DashboardController::index');
+Router::url('login', 'get', 'AuthController::login');
+Router::url('register', 'get', 'AuthController::register');
+Router::url('dashboard', 'get', 'DashboardController::index');
 
 
 # POST
-route('login', 'post', 'AuthController::saveLogin');
-route('register', 'post', 'AuthController::saveRegister');
+Router::url('login', 'post', 'AuthController::saveLogin');
+Router::url('register', 'post', 'AuthController::saveRegister');
 
-if (!in_array($url, $urls['routes'])) {
-    header('Location: ' . BASEURL);
-    exit;
-}
-
-$call = $urls[$_SERVER['REQUEST_METHOD']][$url];
-$call();
+new Router();
