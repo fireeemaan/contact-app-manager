@@ -46,6 +46,21 @@ class ContactController
         }
     }
 
+    static function delete()
+    {
+        if (!isset($_SESSION['user'])) {
+            header('Location: ' . BASEURL . 'login?auth=false');
+            exit;
+        } else {
+            $contact = Contact::delete($_GET['id']);
+            if ($contact) {
+                header('Location: ' . BASEURL . 'dashboard');
+            } else {
+                header('Location: ' . BASEURL . 'contacts?deleteFailed=true');
+            }
+        }
+    }
+
     // static function edit()
     // {
     //     if (!isset($_SESSION['user'])) {

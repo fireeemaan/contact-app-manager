@@ -25,7 +25,7 @@
             <div class="fixed hidden w-full h-auto top-0 bottom-0 bg-black/30 z-20" id="edit-contact">
                 <div
                     class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-72 bg-purple-200 rounded-2xl shadow-lg">
-                    <a href="" class="close-btn m-1 size-7" onclick="hideElement('add-contact')"><img width="30"
+                    <a href="" class="close-btn m-1 size-7" onclick="event.preventDefault(); (() => { hideElement('add-contact') })"><img width="30"
                                 height="30" src="https://img.icons8.com/ios/50/delete-sign--v1.png" /></a>
                         <p class="text-2xl font-bold text-center text-purple-500 my-3 ">Edit Contact</p>
                     <div class="flex flex-col">
@@ -89,7 +89,7 @@
                         <!--                <button class="h-12 p-2 w-[13rem] ease-in-out duration-200 hover:shadow-lg border-black/10 hover:border hover:text-lg rounded-lg font-bold text-md text-red-600">-->
                         <!--                    Logout-->
                         <!--                </button>                -->
-                        <a href="index.html"
+                        <a href="<?= urlpath('dashboard/logout') ?>"
                             class="text-center h-12 p-2 w-[13rem] ease-in-out duration-200 hover:shadow-lg border-black/10 hover:border hover:text-lg rounded-lg font-bold text-md text-red-600">
                             Logout
                         </a>
@@ -105,7 +105,7 @@
                 </div>
                 <button
                     class="add-btn flex flex-row justify-center items-center rounded-lg w-[11rem] px-4 py-2 mb-3 bg-green-500 font-bold text-white hover:bg-green-600"
-                    id="add-btn" onclick="showElement('add-contact')">
+                    id="add-btn" onclick="event.preventDefault(); (() => { showElement('add-contact') })()">
                     <img src="public/assets/img/add-icon.svg" alt="" class="mr-2" />
                     <p>Add Contact</p>
                 </button>
@@ -134,7 +134,7 @@
                                                 <div class="flex flex-row gap-1">
                                                     <a class="edit-btn p-2 bg-blue-500 rounded-lg hover:bg-blue-600"><img
                                                             src="public/assets/img/edit-icon.svg"></img></a>
-                                                    <a class="p-2 bg-red-500 rounded-lg mr-2 hover:bg-red-600"><img
+                                                    <a class="p-2 bg-red-500 rounded-lg mr-2 hover:bg-red-600" href="<?= urlpath("contacts/remove?id=".$contact['id']) ?>"><img
                                                             src="public/assets/img/delete-icon.svg"></img></a>
                                                 </div>
                                             </td>

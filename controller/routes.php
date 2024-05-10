@@ -27,7 +27,9 @@ Router::url('login', 'get', 'AuthController::login');
 Router::url('register', 'get', 'AuthController::register');
 
 Router::url('dashboard', 'get', 'DashboardController::index');
+Router::url('dashboard/logout', 'get', 'AuthController::logout');
 
+Router::url('contacts/remove', 'get', 'ContactController::delete');
 Router::url('contacts/edit', 'get', 'ContactController::edit');
 Router::url('contacts', 'get', 'DashboardController::contacts');
 
